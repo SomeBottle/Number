@@ -34,7 +34,7 @@ var a=Math.floor(Math.random()*parseInt(n))+1;
   if(number.indexOf(a)!==-1&&!cf){
      return count();
   }
-  if(number.length==Number(n)){
+  if(number.length>=Number(n)){
       document.getElementById('t').innerHTML='Finished';
     }else{
 document.getElementById('t').innerHTML=a;
