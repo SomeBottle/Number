@@ -31,7 +31,7 @@ var n=prompt('How Many?','');
   var cf=confirm('Allow Repeating?');
 function a(){
 var a=Math.floor(Math.random()*parseInt(n))+1;
-  if(number.indexOf(a)!==-1&&cf){
+  if(number.indexOf(a)!==-1&&!cf){
      return a();
   }
 document.getElementById('t').innerHTML=a;
