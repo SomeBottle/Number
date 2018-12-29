@@ -24,11 +24,18 @@ h1{z-index:0;font:120px/400px '\5FAE\8F6F\96C5\9ED1';width:960px;color:#AAA;text
 </body> 
 <script>
 var t;
+  var number=[];
 var o=0;
+  var globalnum;
 var n=prompt('How Many?','');
+  var cf=confirm('Allow Repeating?');
 function a(){
 var a=Math.floor(Math.random()*parseInt(n))+1;
+  if(number.indexOf(a)!==-1){
+     return a();
+  }
 document.getElementById('t').innerHTML=a;
+  globalnum=a;
 }
 function p(){
 if(o==0){
@@ -36,7 +43,8 @@ t=setInterval(a,10);
 o=1;
 }else{
 clearInterval(t);
-o=0;
+number[number.length]=globalnum;
+  o=0;
 }
 }
 </script>
