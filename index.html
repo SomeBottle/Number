@@ -32,7 +32,9 @@ var n=prompt('How Many?','');
 function count(){
 var a=Math.floor(Math.random()*parseInt(n))+1;
   if(number.indexOf(a)!==-1&&!cf){
+    if(!(number.length>=Number(n))){
      return count();
+    }
   }
   if(number.length>=Number(n)){
       document.getElementById('t').innerHTML='Finished';
