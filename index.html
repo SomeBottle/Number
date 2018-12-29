@@ -29,17 +29,21 @@ var o=0;
   var globalnum;
 var n=prompt('How Many?','');
   var cf=confirm('Allow Repeating?');
-function a(){
+function count(){
 var a=Math.floor(Math.random()*parseInt(n))+1;
   if(number.indexOf(a)!==-1&&!cf){
-     return a();
+     return count();
   }
+  if(number.length==Number(n)){
+      document.getElementById('t').innerHTML='Finished';
+    }else{
 document.getElementById('t').innerHTML=a;
+    }
   globalnum=a;
 }
 function p(){
 if(o==0){
-t=setInterval(a,10);
+t=setInterval(count,10);
 o=1;
 }else{
 clearInterval(t);
