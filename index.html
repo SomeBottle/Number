@@ -24,11 +24,16 @@ h1{z-index:0;font:120px/400px '\5FAE\8F6F\96C5\9ED1';width:960px;color:#AAA;text
 </body> 
 <script>
 var t;
-  var number=[];
+  var number;
 var o=0;
   var globalnum;
-var n=prompt('How Many?','');
-  var cf=confirm('Allow Repeating?');
+var n,cf;
+  function rp(){
+    n=prompt('How Many?','');
+     cf=confirm('Allow Repeating?');
+    number=[];
+  }
+  rp();
 function count(){
 var a=Math.floor(Math.random()*parseInt(n))+1;
   if(number.indexOf(a)!==-1&&!cf){
@@ -44,6 +49,7 @@ document.getElementById('t').innerHTML=a;
   globalnum=a;
 }
 function p(){
+  if(!(number.length>=Number(n))){
 if(o==0){
 t=setInterval(count,10);
 o=1;
@@ -53,6 +59,9 @@ number[number.length]=globalnum;
     console.log(number.length);
   o=0;
 }
+  }else{
+    return rp();
+  }
 }
 </script>
 </html> 
