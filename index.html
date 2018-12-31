@@ -3,65 +3,16 @@
 <head> 
 <meta charset="UTF-8"/> 
 <title>Numbers.</title> 
-<style> 
-html{margin:0;height:100%;}
-.b{
-position:absolute;
-left:0px;
-top:0px;
-width:100%;
-height:100%;
-z-index:100;
-opacity:0;
-}
-h1{z-index:0;font:120px/400px '\5FAE\8F6F\96C5\9ED1';width:960px;color:#AAA;text-shadow:0 0 1px;text-align:center;position:absolute;top:50%;left:50%;margin:-230px 0 0 -480px;}
-</style> 
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" name="viewport" />
+<link href="./style.css" rel="stylesheet">
 </head> 
 <body> 
 <button type='button' onclick='p()' class='b'></button>
-<h1 id='t'>点击</h1>
+<h1 id='t'>Click</h1>
+<div class='board' id='br'><h2>RESULT</h2><div id='result' style='font-weight:bold;'></div></div>
+<p class='copy'>&copy;SomeBottle</p>
+<p class='pan' id='pan'><a href='javascript:void(0);' onclick='board()' class='panb' id='pb'>抽取情况</a></p>
 </div> 
 </body> 
-<script>
-var t;
-  var number;
-var o=0;
-  var globalnum;
-var n,cf;
-  function rp(){
-    n=prompt('How Many?','');
-     cf=confirm('Allow Repeating?');
-    number=[];
-  }
-  rp();
-function count(){
-var a=Math.floor(Math.random()*parseInt(n))+1;
-  if(number.indexOf(a)!==-1&&!cf){
-    if(!(number.length>=Number(n))){
-     return count();
-    }
-  }
-  if(number.length>=Number(n)){
-      document.getElementById('t').innerHTML='Finished';
-    }else{
-document.getElementById('t').innerHTML=a;
-    }
-  globalnum=a;
-}
-function p(){
-  if(!(number.length>=Number(n)+1)){
-if(o==0){
-t=setInterval(count,10);
-o=1;
-}else{
-clearInterval(t);
-number[number.length]=globalnum;
-    console.log(number.length);
-  o=0;
-}
-  }else{
-    return rp();
-  }
-}
-</script>
+<script src='./m.js'></script>
 </html> 
