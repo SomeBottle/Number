@@ -9,6 +9,7 @@ z-index:1;
 opacity:0;
 }
 body{
+	height:100%;
 	position:relative;
 	margin:0 auto;
 	overflow-x:hidden;
